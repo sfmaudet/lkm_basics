@@ -1,0 +1,12 @@
+This is a basic example of a char device:
+This module has a initialized buffer in kernel memory that you
+can read from user space.
+When its readed from user space, this device returns ONE character at a time from
+kernel to user space.
+
+Usage:
+  1) make  --- This generate char_01.ko and test_module binary app.
+  2) Insert module into kernel (as root): insmod char_01.ko
+  3) Create /dev/char_01 node: mknod /dev/char_01 c [MAYOR_NUMBER] [MINOR_NUMBER]
+    3.1) MAYOR and MINOR can be readed using cat /proc/devices
+  4) cat /dev/char_01 or use test_module user app.
