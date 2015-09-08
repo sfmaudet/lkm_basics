@@ -116,7 +116,3 @@ module_exit(dev_exit); //Exit Macro loaded with exit function.
 
 MODULE_AUTHOR("Santiago F. Maudet, DPLab @ UTN.BA http://www.electron.frba.utn.edu.ar/dplab");
 MODULE_LICENSE("GPL");
-
-
-//Print
-//printk(KERN_INFO "%s\n", format_dev_t(mem_data, device));
