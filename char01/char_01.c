@@ -67,10 +67,17 @@ ssize_t dev_read(struct file *filp, char __user *buf, size_t count, loff_t *f_po
     return 1;  // returned a single character. Ok
 }
 
+int char01_close(struct inode *inode, struct file *flip){
+    return 0;
+}
+
+
 struct file_operations dev_fops = { //Struct File Operations, this module only supports read...
     .owner = THIS_MODULE,           // Tells who is owner of struct file_operations
     .read = dev_read,               // Function pointer init with dev_read function.
+    .release = char01_close,
 };
+
 
 
 
